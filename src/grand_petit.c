@@ -5,29 +5,23 @@
 int main()
 {
     int entier[100];
+    int *entierPtr = entier;
     srand(time(NULL));   /* Initialise le générateur de nombre aléatoir */
     
     for (int i = 0; i < 100 ; i++)
-    {
-        entier[i]=rand() % 10001;   //génére un nbr aléatoire entre 10 000 et 1
-    }
+        *(entierPtr+i)=rand() % 10001;   //génére un nbr aléatoire entre 10 000 et 1
 
-    int grand = entier[0];
-    int petit = entier[0];
+    int grand =  *(entierPtr);
+    int petit =  *(entierPtr);
    
 
     for (int i = 0; i < 100 ; i++)
     {
-        if (entier[i] >= grand)
-        {
-            grand = entier[i];
-        }
+        if ( *(entierPtr+i) >= grand)
+            grand =  *(entierPtr+i);
 
-        if(entier[i] <= petit)
-        {
-            petit = entier[i];
-        }
-
+        if( *(entierPtr+i) <= petit)
+            petit =  *(entierPtr+i);
     }
     printf ("le plus petit nbr est : %d\n", petit);
     printf ("le grand petit nbr est : %d\n", grand);

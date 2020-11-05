@@ -9,6 +9,7 @@ int main() {
     #define RECHERCHE 3
 
     int tableau[SIZE];
+    int *tableauPtr = tableau;
     int temp;
    
     /* Initialise le générateur de nombre aléatoir */
@@ -16,13 +17,13 @@ int main() {
 
     //On allimente le tableau de nombre aléatoir entre 0 et 100
     for(int i = 0 ; i < SIZE ; i++ ) {
-        tableau[i]=rand() % 101;
+        *(tableauPtr+i)=rand() % 101;
     }
 
     //On affiche le tableau avant le trie
     printf("Tableau non trié\n");
     for(int i = 0; i < SIZE; i++)
-      printf("%d ", tableau[i]);
+      printf("%d ", *(tableauPtr+i));
 
 
     /* Trie dans l'ordre croissant */
@@ -30,11 +31,11 @@ int main() {
     {
         for(int j=i+1;j<SIZE;j++)
         {
-            if(tableau[i] > tableau[j])
+            if(*(tableauPtr+i) > *(tableauPtr+j))
             {
-                temp=tableau[i];
-                tableau[i] = tableau[j];
-                tableau[j] = temp;
+                temp=*(tableauPtr+i);
+                *(tableauPtr+i) = *(tableauPtr+j);
+                *(tableauPtr+j) = temp;
             }
         }
     }
@@ -42,7 +43,7 @@ int main() {
     //On affiche le tableau après le trie
     printf("\nTableau trié dans l'ordre croissant\n");
     for(int i = 0; i < SIZE; i++)
-      printf("%d ", tableau[i]);
+      printf("%d ", *(tableauPtr+i));
 
     //****Recherche par dichotomie****/
 
@@ -51,20 +52,19 @@ int main() {
     int fin = SIZE;
     while (debut <= fin) 
     {
-        millieux = floor((float)(debut + fin)/ 2);
-        if (tableau[millieux] == RECHERCHE)
+        millieux = floor((debut + fin)/ 2);
+        if (*(tableauPtr+millieux) == RECHERCHE)
         {
             printf("\nL'entier %i est présent\n", RECHERCHE);
             debut = fin+1;
         }
         else
         {
-        if (RECHERCHE > tableau[millieux])
+        if (RECHERCHE > *(tableauPtr+millieux))
             debut = millieux + 1;
         else
             fin = millieux - 1;
         }
     }
-
       return (0);
 }

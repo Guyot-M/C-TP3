@@ -1,2 +1,5 @@
 *.code-workspace
 src/recherche_dichotomique
+src/tri
+src/grand_petit
+src/chercher

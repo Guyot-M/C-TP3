@@ -7,6 +7,7 @@ int main() {
     #define SIZE 100
 
     int tableau[SIZE];
+    int *tableauPtr = tableau;
     int temp;
    
     /* Initialise le générateur de nombre aléatoir */
@@ -14,13 +15,13 @@ int main() {
 
     //On allimente le tableau de nombre aléatoir
     for(int i = 0 ; i < SIZE ; i++ ) {
-        tableau[i]=rand() % 10001;
+        *(tableauPtr+i)=rand() % 10001;
     }
 
     //On affiche le tableau avant le trie
     printf("Tableau non trié\n");
     for(int i = 0; i < SIZE; i++)
-      printf("%d ", tableau[i]);
+      printf("%d ", *(tableauPtr+i));
 
 
     /* Trie dans l'ordre croissant */
@@ -28,11 +29,11 @@ int main() {
     {
         for(int j=i+1;j<SIZE;j++)
         {
-            if(tableau[i] > tableau[j])
+            if(*(tableauPtr+i) > *(tableauPtr+j))
             {
-                temp=tableau[i];
-                tableau[i] = tableau[j];
-                tableau[j] = temp;
+                temp=*(tableauPtr+i);
+                *(tableauPtr+i) = *(tableauPtr+j);
+                *(tableauPtr+j) = temp;
             }
         }
     }
