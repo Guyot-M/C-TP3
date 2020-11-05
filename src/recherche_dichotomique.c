@@ -42,7 +42,7 @@ int main() {
     //On affiche le tableau après le trie
     printf("\nTableau trié dans l'ordre croissant\n");
     for(int i = 0; i < SIZE; i++)
-      printf("%d", tableau[i]);
+      printf("%d ", tableau[i]);
 
     //****Recherche par dichotomie****/
 
@@ -54,16 +54,16 @@ int main() {
         millieux = floor((debut + fin)/ 2);
         if (tableau[millieux] == RECHERCHE)
         {
-            printf("L'entier %i est présent\n", RECHERCHE);
+            printf("\nL'entier %i est présent\n", RECHERCHE);
             debut = fin+1;
         }
-         else
-         {
-            if (RECHERCHE > tableau[millieux])
-                debut = millieux + 1;
-            else
-                fin = millieux - 1;
-         }
+        else
+        {
+        if (RECHERCHE > tableau[millieux])
+            debut = millieux + 1;
+        else
+            fin = millieux - 1;
+        }
     }
 
       return (0);
