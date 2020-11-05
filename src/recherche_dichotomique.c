@@ -51,7 +51,7 @@ int main() {
     int fin = SIZE;
     while (debut <= fin) 
     {
-        millieux = floor((debut + fin)/ 2);
+        millieux = floor((float)(debut + fin)/ 2);
         if (tableau[millieux] == RECHERCHE)
         {
             printf("\nL'entier %i est présent\n", RECHERCHE);
