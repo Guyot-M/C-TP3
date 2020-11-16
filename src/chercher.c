@@ -16,6 +16,7 @@ int main()
         printf("%d\n",*(tab+i));
     }
 
+    //On cherche si le nombre est présent
     for (int i = 0; i < 100 ; i++)
     {
         if(entier == *(tab+i))
