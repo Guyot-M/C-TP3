@@ -1,4 +1,4 @@
-# TP 1
+# TP 3
 * Les algorithmes de ce TP sont disponibles [ici](./src)
 
 # Bibliothèques
@@ -13,12 +13,9 @@
 * [Recherche dichotomique](https://fr.wikipedia.org/wiki/Recherche_dichotomique)
 
 # Difficulté
-* 
-* 
+* Difficilté moyenne et croissante
 
 # Commentaires
-* 
-* 
 
 # Contributeurs
 * Tous les contributeurs de ce TP sont listés [ici](./CONTRIBUTORS.md)
